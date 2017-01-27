@@ -23,8 +23,6 @@ module.exports = function (options) {
       req.url = req.url.replace(pieces[0], '');
       req.headers = req.headers || [];
       req.headers['accept-version'] = version;
-    } else {
-      return next(new restify.InvalidVersionError('This is an invalid version'));
     }
 
     next();
